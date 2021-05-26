@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Services App</string>
-    <string name="title_activity_tab">TabActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_tab">Home</string>
+    <string name="tab_text_1">Babysitters</string>
+    <string name="tab_text_2">Housekeeping</string>
+    <string name="generate_password"><u>generate password?</u></string>
 </resources>
