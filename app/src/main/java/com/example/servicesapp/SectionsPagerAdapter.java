@@ -1,4 +1,4 @@
-package com.example.servicesapp.ui.main;
+package com.example.servicesapp;
 
 import android.content.Context;
 
@@ -27,9 +27,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        switch (position) {
+            case 0:
+                return new AvailableBabySittersFragment();
+            case 1:
+                return new AvailableHousekeepingFragment();
+        }
+        return null;
     }
 
     @Nullable

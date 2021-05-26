@@ -4,4 +4,6 @@
     <string name="tab_text_1">Babysitters</string>
     <string name="tab_text_2">Housekeeping</string>
     <string name="generate_password"><u>generate password?</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
