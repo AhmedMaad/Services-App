@@ -17,26 +17,24 @@
         app:cardElevation="5dp">
 
         <ScrollView
+            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="16dp">
 
                     <EditText
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:background="@drawable/button_gradient"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
@@ -49,14 +47,14 @@
                     android:id="@+id/emailError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:passwordToggleEnabled="true">
+                    android:layout_marginTop="8dp"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
 
                     <EditText
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:background="@drawable/button_gradient"
                         android:hint="Password"
                         android:inputType="textPassword"
@@ -68,14 +66,14 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:passwordToggleEnabled="true">
+                    android:layout_marginTop="8dp"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
 
                     <EditText
                         android:id="@+id/conpassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:background="@drawable/button_gradient"
                         android:hint="Confirm Password"
                         android:inputType="textPassword"
@@ -120,8 +118,8 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_margin="20dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/button_gradient"
                     android:drawableTop="@drawable/ic_baseline_person_add_alt_1_24"
                     android:drawableTint="@color/black"
