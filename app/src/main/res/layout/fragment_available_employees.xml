@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".AvailableBabySittersFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="employees  framgent (Recycler view)" />
+        tools:listitem="@layout/available_babysitter_list_item"
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>
