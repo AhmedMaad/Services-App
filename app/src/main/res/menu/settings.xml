@@ -3,10 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="settings"
-        app:showAsAction="ifRoom"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="profile"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
-        />
+        android:title="settings"
+        app:showAsAction="ifRoom" />
 
 </menu>

@@ -41,8 +41,19 @@ public class TabActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent i = new Intent(TabActivity.this, SettingsActivity.class);
-        startActivity(i);
+        switch (item.getItemId()){
+            case R.id.settings:
+                Intent i = new Intent(TabActivity.this, SettingsActivity.class);
+                startActivity(i);
+                return true;
+
+            case R.id.profile:
+                Intent ii = new Intent(TabActivity.this, ProfileActivity.class);
+                startActivity(ii);
+                return true;
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

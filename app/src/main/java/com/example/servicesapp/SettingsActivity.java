@@ -38,6 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
                 password.setText(generated);
             }
         });
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder
                 .setView(v)

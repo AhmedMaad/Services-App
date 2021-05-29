@@ -8,7 +8,6 @@
     android:padding="16dp"
     tools:context=".SignupActivity">
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,9 +16,9 @@
         app:cardElevation="5dp">
 
         <ScrollView
-            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,7 +34,7 @@
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_gradient"
+                        android:background="@drawable/gradient"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
@@ -55,7 +54,7 @@
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_gradient"
+                        android:background="@drawable/gradient"
                         android:hint="Password"
                         android:inputType="textPassword"
                         android:maxLines="1"
@@ -74,7 +73,7 @@
                         android:id="@+id/conpassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_gradient"
+                        android:background="@drawable/gradient"
                         android:hint="Confirm Password"
                         android:inputType="textPassword"
                         android:maxLength="12"
@@ -116,19 +115,16 @@
 
                 </RadioGroup>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="80dp"
                     android:layout_margin="16dp"
-                    android:background="@drawable/button_gradient"
-                    android:drawableTop="@drawable/ic_baseline_person_add_alt_1_24"
-                    android:drawableTint="@color/black"
-                    android:gravity="bottom|center"
                     android:onClick="register"
-                    android:padding="8dp"
                     android:text="register"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:cornerRadius="24dp"
+                    app:icon="@drawable/ic_baseline_person_add_alt_1_24"
+                    app:iconGravity="top" />
 
                 <TextView
                     android:id="@+id/login"

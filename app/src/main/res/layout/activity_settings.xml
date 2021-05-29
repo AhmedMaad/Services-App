@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,23 +10,29 @@
     android:padding="64dp"
     tools:context=".SettingsActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_gradient"
         android:onClick="changePass"
         android:text="Change Password"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:iconGravity="top"
+        app:icon="@drawable/ic_baseline_password_24"
+        app:cornerRadius="24dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/button_gradient"
         android:onClick="logout"
-        android:text="Logout :("
-        android:textAllCaps="false" />
+        app:iconGravity="top"
+        app:icon="@drawable/ic_baseline_logout_24"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="24dp" />
 
 </LinearLayout>

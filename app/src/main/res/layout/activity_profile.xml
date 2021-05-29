@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="saveProfile"
+            android:src="@drawable/ic_baseline_check_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="choosePP"
+                tools:src="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="30dp"
+            android:hint="Enter your name"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/cv"
+            app:layout_constraintStart_toEndOf="@id/cv"
+            app:layout_constraintTop_toTopOf="@id/cv"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/cv"
+            app:layout_constraintStart_toEndOf="@id/cv"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="nexttrend.com" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/cv" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="40dp"
+            android:text="About"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v1" />
+
+        <EditText
+            android:id="@+id/et_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="4"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_about"
+            tools:text="@tools:sample/lorem" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter phone number"
+            android:inputType="phone"
+            android:minLines="4"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/et_about" />
+
+        <EditText
+            android:id="@+id/et_hourly_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Hourly Rate"
+            android:inputType="numberDecimal"
+            android:minLines="4"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/et_phone" />
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_my_location_24"
+            app:layout_constraintBottom_toBottomOf="@id/spinner_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/spinner_location" />
+
+        <Spinner
+            android:id="@+id/spinner_location"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_location"
+            app:layout_constraintTop_toBottomOf="@id/et_hourly_rate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
