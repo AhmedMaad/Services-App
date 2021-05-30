@@ -25,7 +25,6 @@ public class AvailableBabySittersFragment extends Fragment {
     private ArrayList<User> searchList = new ArrayList<>();
     private RecyclerView recyclerView;
 
-
     public AvailableBabySittersFragment() {
         // Required empty public constructor
     }
