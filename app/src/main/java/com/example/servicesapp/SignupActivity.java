@@ -58,7 +58,7 @@ public class SignupActivity extends AppCompatActivity {
                                 User user = new User(email.getText().toString(), r.getText().toString());
                                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                                 db
-                                        .collection("userTypes")
+                                        .collection("users")
                                         .document(Finals.user)
                                         .set(user)
                                         .addOnSuccessListener(documentReference -> {

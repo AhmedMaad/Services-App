@@ -12,7 +12,18 @@
         android:background="@drawable/gradient"
         android:padding="16dp">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="note: By default, your current location will be uploaded"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toStartOf="@id/iv_save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
+            android:id="@+id/iv_save"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:onClick="saveProfile"
@@ -20,11 +31,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cv"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="56dp"
+            android:onClick="choosePP"
             app:cardCornerRadius="60dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -33,13 +54,13 @@
                 android:id="@+id/iv_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="choosePP"
+                android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>
 
         <EditText
-            android:id="@+id/tv_name"
+            android:id="@+id/et_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -61,9 +82,8 @@
             android:layout_marginBottom="20dp"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/cv"
             app:layout_constraintStart_toEndOf="@id/cv"
-            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/et_name"
             tools:text="nexttrend.com" />
 
         <View
