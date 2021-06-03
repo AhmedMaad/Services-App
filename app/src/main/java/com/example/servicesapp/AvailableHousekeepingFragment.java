@@ -2,6 +2,7 @@ package com.example.servicesapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,7 +13,9 @@ import android.view.ViewGroup;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -36,13 +39,14 @@ public class AvailableHousekeepingFragment extends Fragment {
         recyclerView = view.findViewById(R.id.rv);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference collection = db.collection("users");
-        collection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        collection.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                List<DocumentSnapshot> documentSnapshots = queryDocumentSnapshots.getDocuments();
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                List<DocumentSnapshot> documentSnapshots = value.getDocuments();
+                users.clear();
                 for (int i = 0; i < documentSnapshots.size(); ++i) {
                     User user = documentSnapshots.get(i).toObject(User.class);
-                    if (user.getUserType().equals("Housekeeping"))
+                    if (user.getUserType().equals("Housekeeping") && user.getHourlyRate() != null)
                         users.add(user);
                 }
                 showProducts();
