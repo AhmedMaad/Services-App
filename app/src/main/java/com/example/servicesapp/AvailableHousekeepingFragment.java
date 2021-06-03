@@ -6,9 +6,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
@@ -52,6 +55,33 @@ public class AvailableHousekeepingFragment extends Fragment {
                 showProducts();
             }
         });
+
+        EditText searchET = view.findViewById(R.id.et_search);
+        searchET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                searchList.clear();
+                for (User user : users) {
+                    if (user.getLocation().toLowerCase().contains(s.toString().toLowerCase())) {
+                        searchList.add(user);
+                    }
+                }
+                EmployeeAdapter adapter =
+                        new EmployeeAdapter(getActivity(), searchList);
+                recyclerView.setAdapter(adapter);
+            }
+        });
+
         return view;
     }
 
